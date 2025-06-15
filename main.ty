@@ -1,0 +1,19 @@
+# main.py
+import requests
+from config import LINE_CHANNEL_ACCESS_TOKEN
+from content.daily_message import generate_daily_message
+
+def send_line_message(message):
+    url = 'https://api.line.me/v2/bot/message/broadcast'
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {LINE_CHANNEL_ACCESS_TOKEN}'
+    }
+    payload = {
+        'messages': [{
+            'type': 'text',
+            'text': message
+        }]
+    }
+    response = requests.post(url, headers=headers, json=payload)
+    return response.status_code
