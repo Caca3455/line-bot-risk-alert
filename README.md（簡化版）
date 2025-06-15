@@ -1,0 +1,15 @@
+# LINE Bot - 戰爭風險與避難推播
+
+每日早上七點，自動發送：
+- 台海軍情摘要
+- 戰爭風險燈號（紅／橘／黃）
+- 針對學齡前孩子家庭的避難建議
+
+## 使用方式
+
+1. 前往 LINE Developers 建立 Messaging API Bot
+2. 將 Channel Access Token 貼入 `config.py`
+3. 安裝套件：
+
+```bash
+pip install -r requirements.txt
